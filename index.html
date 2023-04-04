@@ -6,9 +6,18 @@
     <link href="/icon-192x192.png" rel="icon" type="image/png" sizes="16x16" />
     <link href="/icon-265x256.png" rel="icon" type="image/png" sizes="32x32" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + Ali</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <title>WorkaBus</title>
   </head>
-  <body>
+  <body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+        if (localStorage.getItem('sidebar-expanded') == 'true') {
+            document.querySelector('body').classList.add('sidebar-expanded');
+        } else {
+            document.querySelector('body').classList.remove('sidebar-expanded');
+        }
+    </script>   
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
