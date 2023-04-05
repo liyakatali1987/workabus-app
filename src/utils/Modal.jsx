@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Transition from '../utils/Transition';
 
-function Modal({
+const  Modal = ({
   children,
   id,
   ariaLabel,
   show,
   handleClose
-}) {
+}) => {
 
   const modalContent = useRef(null);
 

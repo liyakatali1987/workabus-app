@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../partials/Header';
-import Banner from '../partials/Banner';
 
-function SignIn() {
+const  SignIn = () =>{
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -94,8 +93,6 @@ function SignIn() {
         </section>
 
       </main>
-
-      <Banner />
 
     </div>
   );
