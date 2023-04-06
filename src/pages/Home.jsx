@@ -7,6 +7,8 @@ import FeaturesBlocks from '../partials/FeaturesBlocks';
 import Testimonials from '../partials/Testimonials';
 import Newsletter from '../partials/Newsletter';
 import Footer from '../partials/Footer';
+import Profile from '../components/Profile';
+
 
 function Home() {
   return (
@@ -19,6 +21,7 @@ function Home() {
       <main className="flex-grow">
 
         {/*  Page sections */}
+        
         <HeroHome />
         <FeaturesHome />
         <FeaturesBlocks />

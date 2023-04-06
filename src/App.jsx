@@ -4,16 +4,13 @@ import {
   Route,
   useLocation
 } from 'react-router-dom';
-
+import { useAuth0 } from "@auth0/auth0-react";
 import 'aos/dist/aos.css';
 import './css/style.css';
-
 import AOS from 'aos';
-
 import Home from './pages/Home';
-import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import ResetPassword from './pages/ResetPassword';
+
 
 function App() {
 
@@ -34,13 +31,15 @@ function App() {
     document.querySelector('html').style.scrollBehavior = ''
   }, [location.pathname]); // triggered on route change
 
+  const { error } = useAuth0();
+  if (error) {
+    return <div>Oops... {error.message}</div>;
+  }
   return (
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </>
   );
