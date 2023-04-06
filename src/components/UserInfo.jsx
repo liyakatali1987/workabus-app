@@ -2,11 +2,13 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./Login";
 import LogoutButton from "./Logout";
+// import UserProfile from "../pages/UserProfile";
 import { Avatar, Dropdown } from "flowbite-react";
+import { Link } from "react-router-dom";
 
-const Profile = () => {
+const UserInfo = () => {
     const { user, isAuthenticated } = useAuth0();
-
+    
     if (isAuthenticated) {
         return (
             <div className="flex flex-wrap gap-2">
@@ -29,7 +31,7 @@ const Profile = () => {
                         </span>
                     </Dropdown.Header>
                     <Dropdown.Item>
-                        Profile
+                        <Link to="/profile">Profile</Link>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         Dashboard
@@ -45,11 +47,10 @@ const Profile = () => {
         );
     }
     else {
-        console.log(isAuthenticated);
         return <LoginButton />
     }
 
 };
 
-export default Profile;
+export default UserInfo;
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Profile from '../components/Profile';
-
+import UserInfo from '../components/UserInfo';
+import Logo from '../assets/icon.png'
 const Header = () => {
   const [top, setTop] = useState(true);
 
@@ -22,7 +22,7 @@ const Header = () => {
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
             <div>
-              <img src="/workabus.png" alt="workabus" class="object-fill h-20 w-30 ..." />
+              <img src={Logo} alt="workabus" class="object-fill h-20 w-30 ..." />
             </div>
           </div>
 
@@ -30,7 +30,7 @@ const Header = () => {
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Profile/>
+                <UserInfo/>
               </li>
             </ul>
 

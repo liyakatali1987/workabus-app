@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 import './css/style.css';
 import AOS from 'aos';
 import Home from './pages/Home';
-import SignUp from './pages/SignUp';
+import UserProfile from './pages/UserProfile';
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route exact path="/profile" element={<UserProfile />} />
       </Routes>
     </>
   );
