@@ -8,7 +8,6 @@ function Results() {
       <Navbar />
       <div className="flex bg-slate-50 min-h-screen">
         <h1 className=''> Results Page </h1>
-
       </div>
       <Footer />
     </div>

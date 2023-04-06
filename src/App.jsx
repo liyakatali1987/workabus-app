@@ -37,6 +37,7 @@ function App() {
   }
   return (
     <>
+      <BottomNavigation />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/profile" element={<UserProfile />} />

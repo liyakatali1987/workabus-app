@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
-
 function SearchBar() {
 
     const navigate = useNavigate();
@@ -11,7 +10,6 @@ function SearchBar() {
         e.preventDefault();
         navigate("/results?result");
     };
-
     return (  
         <div className="flex justify-center items-center h-screen">
             <div className="flex flex-col justify-center items-center shadow-md" >
@@ -33,4 +31,4 @@ function SearchBar() {
     )
 }
 
-export default SearchBar
+export default SearchBar;
