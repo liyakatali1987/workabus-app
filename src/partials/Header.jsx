@@ -22,8 +22,8 @@ function Header() {
           {/* Site branding */}
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
-            <div class="bg-indigo-300 ..." >
-              <img src="/workabus.png" alt="workabus" class="object-fill h-20 w-30 ..."/>
+            <div className="bg-indigo-300 ..." >
+              <img src="/workabus.png" alt="workabus" className="object-fill h-20 w-30 ..."/>
             </div>
           </div>
 

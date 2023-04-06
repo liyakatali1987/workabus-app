@@ -14,6 +14,9 @@ import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
+import Results from './pages/Results';
+import SearchBar from './partials/SearchBar';
+import BottomNavigation from './partials/BottomNavigation';
 
 function App() {
 
@@ -36,11 +39,14 @@ function App() {
 
   return (
     <>
+      <BottomNavigation />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/search" element={<SearchBar />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
     </>
   );
