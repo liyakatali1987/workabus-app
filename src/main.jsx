@@ -11,6 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Auth0Provider
+        cacheLocation={'localstorage'}
         domain={AUTH_DOMAIN}
         clientId={AUTH_CLIENT_ID}
         authorizationParams={{

@@ -1,11 +1,18 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import AppButton from "../partials/Button";
 
 const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect} = useAuth0();
+  const handleLogin = async () => {
+    await loginWithRedirect({
+      appState: {
+        returnTo: "/",
+      }
+    })
+  };
   return (
-      <button class="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-md" onClick={() => loginWithRedirect()}>Join/Sign In</button>
-
+      <AppButton clickEvent={handleLogin} text="Sign Up/Login" />
   );
 };
 

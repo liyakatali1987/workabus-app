@@ -1,8 +1,13 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const UserProfile = () => {
-    return <div>Upadte Profile</div>
+const Profile = () => {
+    return (
+        <div>
+            User Profile Page
+        </div>
+
+    )
 }
 
-export default UserProfile;
+export default Profile

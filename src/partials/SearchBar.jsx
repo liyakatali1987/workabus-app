@@ -1,7 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-
+import { MdOutlineSearch } from "react-icons/md"
+import { TextInput, Button } from 'flowbite-react';
+import AppButton from './Button';
 function SearchBar() {
 
     const navigate = useNavigate();
@@ -10,24 +12,26 @@ function SearchBar() {
         e.preventDefault();
         navigate("/results?result");
     };
-    return (  
-        <div className="flex justify-center items-center h-screen">
-            <div className="flex flex-col justify-center items-center shadow-md" >
-                <img className='w-64 mb-5' src={logo} alt="workabus-logo" />
-                <form className="flex-col items-center" onSubmit={handleSubmit}>
-                    <input
-                        className="my-3 px-4 py-2 border w-full border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        type="text"
-                        placeholder="job title, courses, companies ..."
-                    />
-                    <button className="w-full px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400" type="submit" >
-                        Search
-                    </button>
-                </form>
-            </div>
-            
-        </div>
+    return (
+        <div className='items-center justify-center items-center justify-center'>
+            <form>
+                <div className='flex flex-row justify-center item-center'>
+                    <div className='basis-1/2'>
+                        <TextInput
+                            id="searchterm"
+                            placeholder='Jobs, Courses, Certificates'
+                            required={true}
+                            className='mb-2 block'
+                            icon={MdOutlineSearch}
+                        />
+                    </div>
+                    <div className='mx-2 my-1'>
+                        <AppButton text="Search"/>
+                    </div>
+                </div>
+            </form>
 
+        </div>
     )
 }
 

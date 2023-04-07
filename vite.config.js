@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import postcss from './postcss.config.js';
 import react from '@vitejs/plugin-react-swc'
 import { VitePWA } from "vite-plugin-pwa";
-
+import dns from 'dns';
+dns.setDefaultResultOrder('verbatim')
 // https://vitejs.dev/config/
 export default defineConfig(
   {
