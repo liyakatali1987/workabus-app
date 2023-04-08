@@ -27,9 +27,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Layout />}>
           <Route index element={<LayoutPage/>}/>
-        </Route>
-        <Route exact path="/profile" element={<UserProfile />} />
-        <Route exact path="/admin" element={<AdminPage />} />
+          <Route exact path="/profile" element={<UserProfile />} />
+          <Route exact path="/admin" element={<AdminPage />} />
+        </Route>   
       </Routes>  
       </div>
   );
