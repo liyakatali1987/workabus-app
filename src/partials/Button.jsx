@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "flowbite-react";
 const AppButton = ({clickEvent, text}) => {
     return (
-        <Button class="bg-indigo-500 text-white text-sm font-medium rounded-md mx-2"
+        <Button className="bg-indigo-500 text-white text-sm font-medium rounded-md px-1 py-1"
          onClick={clickEvent}>
             {text}
         </Button>
