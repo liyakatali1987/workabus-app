@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 import { VitePWA } from "vite-plugin-pwa";
 import dns from 'dns';
 dns.setDefaultResultOrder('verbatim')
-// https://vitejs.dev/config/
+
 export default defineConfig(
   {
     define: {
@@ -58,6 +58,12 @@ export default defineConfig(
         }
       }),
     ],
+    build: {
+      manifest: true,
+      rollupOptions: {
+        input: "./src/main.jsx"
+      }
+    },
     resolve: {
       alias: [
         {
@@ -67,11 +73,6 @@ export default defineConfig(
           },
         },
       ],
-    },
-    build: {
-      commonjsOptions: {
-        transformMixedEsModules: true,
-      }
-    } 
+    }
   }
 )

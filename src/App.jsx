@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Outlet,
   Routes,
-  Route,
-  BrowserRouter
+  Route
 } from 'react-router-dom';
 import './css/style.css';
 import LayoutPage from './pages/Layout';

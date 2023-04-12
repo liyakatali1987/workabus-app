@@ -1,6 +1,5 @@
 import UserInfo from '../components/UserInfo';
 import Logo from '../assets/icon.png'
-import AppLink from './Link';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -13,8 +12,6 @@ const Header = () => {
           </Link>
 
           <ul className="flex flex-grow justify-end flex-wrap items-center">
-
-            <li><AppLink to="/admin" text="Admin" /></li>
             <li>
               <UserInfo />
             </li>

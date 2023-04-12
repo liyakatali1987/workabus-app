@@ -38,6 +38,10 @@ const UserInfo = () => {
                     <Dropdown.Item>
                         <LogoutButton/>
                     </Dropdown.Item>
+                    <Dropdown.Divider/>
+                    <Dropdown.Item>
+                        <Link to="/admin">Admin</Link>
+                    </Dropdown.Item>
                 </Dropdown>
             </div>
 
