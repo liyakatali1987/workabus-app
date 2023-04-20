@@ -71,6 +71,7 @@ export default defineConfig(
           replacement: (val) => {
             return val.replace(/^~/, "");
           },
+          events: 'rollup-plugin-node-polyfills/polyfills/events'
         },
       ],
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from "jotai";
 import App from './App';
 import { Auth0Provider } from "@auth0/auth0-react";
 
@@ -18,7 +19,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           redirect_uri: window.location.origin,
         }}
       >
-        <App />
+        <Provider>
+          <App />
+        </Provider>
+
       </Auth0Provider>
 
     </Router>
