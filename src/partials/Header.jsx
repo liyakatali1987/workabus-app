@@ -1,25 +1,60 @@
+import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Logo from '../assets/icon.png';
 import UserInfo from '../components/UserInfo';
-import Logo from '../assets/icon.png'
-import { Link } from 'react-router-dom';
 
-const Header = () => {
+function Header() {
   return (
-    <header className="">
-      <div className="flex items-center justify-between h-16 md:h-20">
-        <nav className="flex flex-grow">
-          <Link to="/">
+    <AppBar position="static" color='transparent'>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
             <img src={Logo} alt="workabus" class="object-fill h-20 w-30 ..." />
-          </Link>
+          </Typography>
 
-          <ul className="flex flex-grow justify-end flex-wrap items-center">
-            <li>
-              <UserInfo />
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          </Box>
+
+        <UserInfo/>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
-
 export default Header;

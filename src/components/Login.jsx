@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import AppButton from "../partials/Button";
+import { Button } from "@mui/material";
 
 const LoginButton = () => {
   const { loginWithRedirect} = useAuth0();
@@ -12,7 +12,7 @@ const LoginButton = () => {
     })
   };
   return (
-      <AppButton clickEvent={handleLogin} text="Sign Up/Login" />
+      <Button onClick={handleLogin} variant="contained">SignUp/Login</Button>
   );
 };
 
