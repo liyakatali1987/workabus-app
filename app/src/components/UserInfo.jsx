@@ -65,7 +65,7 @@ const UserInfo = () => {
                         <Typography textAlign="center">{user.name}</Typography>
                     </MenuItem>
                     <MenuItem key="Logout" onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Logout</Typography>
+                        <Typography textAlign="center"><LogoutButton/></Typography>
 
                     </MenuItem>
                 </Menu>
