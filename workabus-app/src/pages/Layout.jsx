@@ -4,10 +4,9 @@ import SearchBar from '../partials/SearchBar';
 
 const  LayoutPage = () => {
   return (
-
-      <main className="flex-grow">
+      <div className="flex-grow">
         <SearchBar />
-      </main>
+      </div>
   );
 }
 

@@ -4,7 +4,6 @@ import LoginButton from "./Login";
 import LogoutButton from "./Logout";
 import { Tooltip, Box, Menu, IconButton, Avatar, MenuItem, Typography, Divider } from '@mui/material';
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const UserInfo = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -34,8 +33,9 @@ const UserInfo = () => {
                     <IconButton 
                     sx={{ p: 0 }}
                     onClick={handleOpenNavMenu}
+                    src={user.picture}
                     >
-                        <Avatar alt="Remy Sharp" src={user.picture} />
+                        <Avatar alt="" src={user.picture} />
                     </IconButton>
                 </Tooltip>
                 <Menu

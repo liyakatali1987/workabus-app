@@ -24,8 +24,6 @@ const SearchBar = () => {
 
         <Container
             maxWidth="md" sx={{ mt: 10, ml: 50 }}
-            justifyContent="center"
-            alignItems="center"
         >
             <Box
                 display="flex" 
