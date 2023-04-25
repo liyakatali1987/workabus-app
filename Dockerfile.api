@@ -1,0 +1,5 @@
+FROM workabusbase
+RUN mkdir /app
+WORKDIR /app
+RUN chown workabus:workabus /app
+USER workabus

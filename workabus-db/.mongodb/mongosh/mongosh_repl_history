@@ -1,0 +1,10 @@
+quit
+q
+show databases
+show
+show dbs
+help
+table
+tables
+db.getSiblingDB()
+db
