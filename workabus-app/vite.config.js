@@ -14,7 +14,6 @@ export default defineConfig(
       postcss
     },
     plugins: [
-      "react-html-attrs",
       react(),
       VitePWA({
         registerType: 'autoUpdate',
@@ -66,14 +65,6 @@ export default defineConfig(
       }
     },
     resolve: {
-      // alias: [
-      //   {
-      //     find: /^~.+/,
-      //     replacement: (val) => {
-      //       return val.replace(/^~/, "");
-      //     },
-      //   },
-      // ],
     }
   }
 )
