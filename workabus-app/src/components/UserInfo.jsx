@@ -9,31 +9,24 @@ const UserInfo = () => {
     const { user, isAuthenticated } = useAuth0();
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-  
+
     const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
+        setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
+
     const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
+        setAnchorElNav(null);
     };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
+
 
     if (isAuthenticated) {
         return (
             <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title={user.name}>
-                    <IconButton 
-                    sx={{ p: 0 }}
-                    onClick={handleOpenNavMenu}
-                    src={user.picture}
+                    <IconButton
+                        sx={{ p: 0 }}
+                        onClick={handleOpenNavMenu}
+                        src={user.picture}
                     >
                         <Avatar alt="" src={user.picture} />
                     </IconButton>
@@ -59,10 +52,10 @@ const UserInfo = () => {
                     </MenuItem>
                     <Divider />
                     <MenuItem key="Profile" onClick={handleCloseNavMenu}>
-                        <Link to="/profile" textAlign="center">Profile</Link>
+                        <Link to="/profile">Profile</Link>
                     </MenuItem>
                     <MenuItem key="Logout" onClick={handleCloseNavMenu}>
-                        <LogoutButton/>
+                        <LogoutButton />
                     </MenuItem>
                 </Menu>
             </Box>

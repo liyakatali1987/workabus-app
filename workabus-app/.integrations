@@ -1,7 +1,0 @@
-Auth0:
-
-clientId : 2a5FRUfN3ImDO5ADnm7IAB5wwYn68Ang
-domain: workabus.au.auth0.com
-clientSecret: WEErQtEdC-rOMQXdkOJKJ-qL_OmqyhqtZUcP9ZG_FIFzUYJ2nrFwiU2ePjbih6MR
-
-https://auth0.com/docs/quickstart/spa/react/01-login#install-the-auth0-react-sdk

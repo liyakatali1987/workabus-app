@@ -23,6 +23,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-workabus-app/.integrations
+*.integrations
 *.env
 *.pem

@@ -1,23 +1,29 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Auth0Api } from '../../api/Auth0Api';
-import Table from 'react-tailwind-table';
+import { DataGrid } from '@mui/x-data-grid';
+
 
 const Users = () => {
     const [users, setUsers] = useState([]);
 
     const columns = useMemo(() =>
         [
-            {
+            {   
                 field: 'email',
-                use: 'Email',
+                headerName: 'Email',
+                flex:1,
+                hideable: true,
             },
             {
                 field: 'name',
-                use: 'Name',
+                headerName: 'Name',
+                flex:1
             },
             {
                 field: 'email_verified',
-                use: 'Email verified',
+                headerName: 'Email verified',
+                flex:1,
+                renderCell: (params) => params.value ? <div style={{color: 'green'}}>Yes</div> : <div style={{color: 'red'}}>No</div>,
             }
         ]
         , []);
@@ -28,22 +34,28 @@ const Users = () => {
 
     }
 
-    const customRow = (row, column, display_value) =>{
-        if (column.field === 'email_verified'){
-            return row.email_verified ? 'Yes' : 'No';
-        }
-    };
-
-
     useEffect(() => {
         getUsers();
         console.log(users)
     }, []);
-
+    console.log(users)
     return (
-            <Table columns={columns} rows={users} table_header='Workabus Users' row_render={customRow} per_page={20}/>
+        <div style={{ height: 350, width: '100%' }}>
+            <DataGrid  
+                autoHeight
+                rows={users} 
+                columns={columns} 
+                getRowId={ (row) => row.email + row.user_id}
+                rowsLoadingMode="server"
+                sx = {{
+                    borderColor: 'primary.light',
+                    '& .MuiDataGrid-cell:hover': {
+                        color: 'primary.main',
+                      },
+                }}
+                />
+        </div>
     )
-
 
 }
 
