@@ -25,3 +25,4 @@ dist-ssr
 *.sw?
 app/.integrations
 app/.env
+.env
