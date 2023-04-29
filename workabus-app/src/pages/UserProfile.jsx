@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 const Profile = () => {
     const theme = useTheme();
     const { user, isAuthenticated } = useAuth0();
+    console.log(user);
     const navigate = useNavigate();
     if (!isAuthenticated) {
         navigate('/');
