@@ -1,6 +1,5 @@
 import express from "express";
 import dotenv from "dotenv";
-import { dbConnect } from "./db/index.js";
 import { userModel } from "./schemas/user.schema.js";
 dotenv.config();
 
@@ -17,6 +16,7 @@ app.get("/", (req, res) => {
 })
 
 // dbConnect();
+// some changes
 
 const user = new userModel(
     {
