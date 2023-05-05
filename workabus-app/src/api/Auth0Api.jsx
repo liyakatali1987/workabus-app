@@ -1,10 +1,4 @@
-import { atom, useAtom } from "jotai";
 import { axiosRequest } from "./AxiosClient";
-
-// // ----------------------------------------------------------------
-// // AUTH0 API CONFIGURATION
-// // ----------------------------------------------------------------
-
 
 const DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 const AUTH_API_BASE_URL = `https://${DOMAIN}`;

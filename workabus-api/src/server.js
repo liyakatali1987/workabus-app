@@ -1,44 +1,27 @@
-import express from "express";
-import dotenv from "dotenv";
-import { dbConnect } from "./db/index.js";
-import { userModel } from "./schemas/user.schema.js";
-dotenv.config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+const api = require("./api");
 
-app.use(express.json());
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus: 200,
+}
 
-app.use(express.urlencoded(
-   {extended: true}
-));
+app.use(cors(corsOptions))
 
-app.get("/", (req, res) => {
-    res.json({ message: "OK"})
-})
+const port = process.env.PORT || 3001
 
-// dbConnect();
+app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use('/api', api);
 
-const user = new userModel(
-    {
-        "name": "Tiaogo",
-        "email": "tiaogo@gmail.com",
-        "created_at": Date(),
-        "updated_at": Date(),
-        "password": "none",
-        "age": 30,
-    }
-)
-
-const filter = {email:'tiaogo@gmail.com'}
-const update = {age: 33}
-
-const doc = await userModel.findOneAndUpdate(filter, update, { new: true})
-
-// console.log(doc);
-
-app.listen(3001, () => {
+app.listen(port, () => {
     console.log('listening on http://localhost:3001');
-    return "Hello, world!";
 })
 
 

@@ -11,6 +11,7 @@ const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+  {/* <React.Fragment> */}
     <Auth0Provider
       cacheLocation={'localstorage'}
       domain={AUTH_DOMAIN}
@@ -27,5 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Provider>
 
     </Auth0Provider>
-  </React.StrictMode>
+   </React.StrictMode>
+  // </React.Fragment>
 );

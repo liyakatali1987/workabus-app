@@ -1,17 +1,24 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+const mongoose =  require("mongoose");
+const dotenv = require("dotenv");
 
 dotenv.config();
-
+mongoose.Promise = global.Promise;
 const dbString = process.env.DATABASE_URL;
-export const dbConnect = () => {
+
+
+exports.dbConnect = () => {
   mongoose.connection.once("open", () => console.log("DB connection"));
-  return mongoose.connect(
-    `${dbString}?retryWrites=true&w=majority`,
-    { keepAlive: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-    }
-  );
+  
+  try{
+    return mongoose.connect(
+      `${dbString}?retryWrites=true&w=majority`,
+      { 
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
+  }catch(e){
+    console.log("Error connecting");
+  }
+
 };

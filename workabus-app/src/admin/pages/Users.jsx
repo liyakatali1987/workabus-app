@@ -36,9 +36,8 @@ const Users = () => {
 
     useEffect(() => {
         getUsers();
-        console.log(users)
     }, []);
-    console.log(users)
+
     return (
         <div style={{ height: 350, width: '100%' }}>
             <DataGrid  
