@@ -12,7 +12,7 @@ import {
     FormLabel
 } from '@mui/material';
 
-import { AppButton, AppCard } from '../components/CustomStyles';
+import { AppButton, AppCard } from '../components/custom/CustomStyles';
 import { useNavigate } from 'react-router-dom';
 import { getUser } from '../api/UserApi';
 
