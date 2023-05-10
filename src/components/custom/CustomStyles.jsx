@@ -1,23 +1,36 @@
 import { styled } from "@mui/material/styles";
 import {
   Button,
-  Card 
+  Card, 
+  CardContent
 } from "@mui/material";
 import { green } from "@mui/material/colors";
 
-export const AppButton = styled(Button)(({ pill }) => ({
-    borderRadius: pill ? 50 : 4,
-    fontSize: 10,
+export const AppButton = styled(Button)(() => ({
+    borderRadius:4,
+    fontSize: 15,
     size: "small",
     boxSizing: "inherit",
-    backgroundColor: green[500]
+    backgroundColor: green[500],
+    margin:'auto'
   }));
 
 export const AppCard = styled(Card)(({}) => ({
-  borderRadius: 10,
+  borderRadius: 2,
   borderColor: green[500],
-  fontSize: 10,
+  fontSize: 15,
   size: "small",
+  border:1,
+  padding: 2,
+  margin:'auto',
+  justifyContent: "center",
+  flexGrow:1,
+}));
+
+export const AppCardContent = styled(CardContent)(({}) => ({
   border: 1,
-  marginBottom: 10
+  borderRadius: 2,
+  justifyContent: "center",
+  margin:2,
+
 }));

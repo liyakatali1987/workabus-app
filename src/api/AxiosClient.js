@@ -1,13 +1,12 @@
 import axios from "axios";
 
-async function axiosRequest({ api = "", headers = {}, req_type = "get", params = {}, data = {} }) {
-  
+async function axiosRequest({ api = '', headers = {}, req_type = 'get', params = {}, data = {} }) {
   const options = {
     method: req_type.toUpperCase(),
     url: api,
     headers: headers,
-    data: new URLSearchParams(data),
     params: params,
+    data: data, // Updated line
   };
 
   try {
@@ -17,5 +16,6 @@ async function axiosRequest({ api = "", headers = {}, req_type = "get", params =
     throw error;
   }
 }
+
 
 export { axiosRequest };

@@ -9,6 +9,10 @@ import Error from './pages/Error';
 import CompleteProfile from './pages/RegisterUser';
 import RegisterUser from './pages/RegisterUser';
 import RegisterCompany from './pages/RegisterCompany';
+import TestComponent from './pages/TestComponent';
+import UserDashboard from './components/userdashboard/UserDashBoard';
+import CompanyDashboard from './pages/CompanyDashboard';
+
 
 import { atom } from 'jotai';
 
@@ -23,10 +27,13 @@ function App() {
             <Route exact path="/profile/worker" element={<RegisterUser/>} />
             <Route exact path="/profile/company" element={<RegisterCompany/>} />
           </Route>
-          <Route path="/admin" element={<AdminPage drawer={drawer}/>} />
-          <Route path="/email-verify" element={<EmailVerify/>} />
-          <Route path="error" element={<Error/>} />
-          <Route path="/complete" element={<CompleteProfile/>} />
+          <Route exact path="/admin" element={<AdminPage drawer={drawer}/>} />
+          <Route exact path="/email-verify" element={<EmailVerify/>} />
+          <Route exact path="error" element={<Error/>} />
+          <Route exact path="/complete" element={<CompleteProfile/>} />
+          <Route exact path="/test" element={<TestComponent/>} />
+          <Route exact path="/userdashboard" element={<UserDashboard/>} />
+          <Route exact path="/companydashboard" element={<CompanyDashboard/>} />
         </Routes>
       </Layout>
   );

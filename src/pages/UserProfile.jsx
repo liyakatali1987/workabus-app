@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import {
-    CardContent,
     Typography,
     CircularProgress,
-    Box,
     Radio,
     RadioGroup,
     FormControlLabel,
     FormControl,
-    FormLabel
+    FormLabel,
+    Grid,
+    Box,
+    Paper
 } from '@mui/material';
 
-import { AppButton, AppCard } from '../components/custom/CustomStyles';
+import { AppButton, AppCard, AppCardContent } from '../components/custom/CustomStyles';
 import { useNavigate } from 'react-router-dom';
 import { getUser } from '../api/UserApi';
 
@@ -61,62 +62,71 @@ const Profile = () => {
 
     const completeProfile = () => {
         const path = `/profile/${profileType}`;
-        console.log(path);
-        navigate(path, {state:userData});
+        navigate(path, { state: userData });
+    };
+
+    const redirectedUser = () => {
+        if (profileType === 'worker')
+        {
+            navigate('/userdashboard', { state: userData });
+        }
+        else if (profileType === 'company') {
+            navigate('/companydashboard', { state: userData });
+        }
     };
 
     return (
-        <div style={{ justifyContent: 'center' }}>
-            <AppCard>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flex: '1 0 auto' }}>
-                        <Typography style={{ left: 0 }}>
-                            Welcome, {userData.email}
-                        </Typography>
-                        <Typography sx={{ color: userData.profile_complete ? 'green' : 'red' }} component="span">
+        <AppCard>
+            <Grid container sx={{ justifyContent: 'center', margin: 'auto' }} display="inline-block">
+                <AppCardContent>
+                    <Paper sx={{ border: 1, borderRadius: 2, width: '100%', paddingLeft: 5, paddingTop: 2, paddingBottom: 2 }} display="inline-block">
+                        Welcome, {userData.email}
+                        <Typography sx={{ color: userData.profile_complete ? 'green' : 'red', alignContent: 'end', paddingLeft: 105 }} component="span">
                             PROFILE STATUS:  {userData.profile_complete ? 'COMPLETE' : 'INCOMPLETE'}
                         </Typography>
-                    </CardContent>
-                    <CardContent sx={{ flex: '1 0 auto' }}>
-                        {!userData.profile_complete &&
-                            <Typography variant="body1" component="div">
-                                <FormControl>
-                                    <FormLabel sx={{ marginRight: 2 }}>Select Registration Type</FormLabel>
-                                    <RadioGroup 
-                                        row
-                                        defaultValue="worker"
-                                        onChange={ (e , value) => {
-                                            setProfileType(value);
-                                        } }
-                                    >
-                                        <FormControlLabel
-                                            id="worker"
-                                            value="worker"
-                                            control={<Radio />}
-                                            label="Worker"
-                                        />
-                                        <FormControlLabel
-                                            id="company"
-                                            value="company"
-                                            control={<Radio />}
-                                            label="Company"
-                                        />
-                                    </RadioGroup>
-                                    <AppButton 
-                                        variant='contained' 
-                                        size='small'
-                                        onClick={completeProfile}
-                                        sx={{ marginTop: '5px' }}>
-                                        Complete Profile
-                                    </AppButton>
-                                </FormControl>
-                            </Typography>
-                        }
-                    </CardContent>
+                    </Paper>
+                </AppCardContent>
+                <AppCardContent>
+                    <Grid container sx={{ justifyContent: 'center', margin: 'auto' }} display="inline-block">
+                        {(!userData.profile_complete || userData.edit_profile) &&
+                            <FormControl>
+                                <FormLabel sx={{ marginRight: 2 }}>Select Registration Type</FormLabel>
+                                <RadioGroup
+                                    row
+                                    defaultValue="worker"
+                                    onChange={(e, value) => {
+                                        setProfileType(value);
+                                    }}
+                                >
+                                    <FormControlLabel
+                                        id="worker"
+                                        value="worker"
+                                        control={<Radio />}
+                                        label="Worker"
+                                    />
+                                    <FormControlLabel
+                                        id="company"
+                                        value="company"
+                                        control={<Radio />}
+                                        label="Company"
+                                    />
+                                </RadioGroup>
+                                <AppButton
+                                    variant='contained'
+                                    size='small'
+                                    onClick={completeProfile}
+                                    sx={{ marginTop: '5px' }}>
+                                    Complete Profile
+                                </AppButton>
 
-                </Box>
-            </AppCard>
-        </div>
+                            </FormControl>
+                        
+                    }
+                    {redirectedUser()}
+                    </Grid>
+                </AppCardContent>
+            </Grid>
+        </AppCard>
     );
 }
 

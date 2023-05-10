@@ -8,8 +8,8 @@ import { useAtom } from "jotai";
 
 const DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 const AUTH_API_BASE_URL = `https://${DOMAIN}`;
-const AUTH_API_CLIENT = import.meta.env.VITE_AUTH_API_CLIENT_ID;
-const AUTH_API_SECRET = import.meta.env.VITE_APP_AUTH_CLIENT_SECRET;
+const AUTH_API_CLIENT = import.meta.env.VITE_AUTH_CLIENT_ID;
+const AUTH_API_SECRET = import.meta.env.VITE_APP_AUTH_API_CLIENT_SECRET;
 const API_AUDIENCE = `https://${DOMAIN}/api/v2/`;
 
 // -------------------------------------------------------------------

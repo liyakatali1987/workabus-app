@@ -11,3 +11,16 @@ export const getUser = (email) => {
         }
     });
 }
+
+export const registerUser = (data) => {
+    const params = {"user_type": 'worker'}
+    const headers = {'Content-Type': 'application/json'}
+    const register_api = `${API_BASE_URL}/user/registerUser`;
+    return axiosRequest({
+        api: register_api,
+        req_type: 'POST',
+        headers: headers,
+        params: params,
+        data: JSON.stringify(data)
+    });
+}

@@ -32,7 +32,6 @@ const Header = () => {
   const [focus, setFocus] = useState(false);
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(searchQuery);
   };
 
   return (

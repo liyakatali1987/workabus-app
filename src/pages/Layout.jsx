@@ -9,10 +9,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'fixed',
+    marginLeft:10,
+    marginRight:10
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    justifyContent: 'center',
+
   },
 }));
 
@@ -37,13 +41,11 @@ const Layout = ({ children, drawer }) => {
   return (
     <ThemeProvider theme={lightTheme}>
       <CssBaseline />
-      <div className={classes.root}>
         <Header drawer={drawer}/>
         <main className={classes.content}>
           {children}
         </main>
         <Footer />
-      </div>
     </ThemeProvider>
   );
 };
