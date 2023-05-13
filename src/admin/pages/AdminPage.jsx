@@ -7,7 +7,7 @@ import {
   PostAddOutlined
 
 }  from '@mui/icons-material';
-import CustomDrawer from '../../components/CustomDrawer';
+import CustomDrawer from '../../components/custom/CustomDrawer';
 import { useAtom } from 'jotai';
 import { needDrawer, openDrawer } from '../../store';
 import Dashboard from "./Dashboard";

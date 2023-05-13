@@ -1,12 +1,10 @@
-import Registration from '../components/Registration'
+import React from 'react'
 
-const RegisterCompany = () => {
-
+const RegisterCompany = ({userData}) => {
+console.log('RegisterCompany', userData);
   return (
-    <>
-      <Registration />
-    </>
-  );
+    <div>RegisterCompany</div>
+  )
 }
 
 export default RegisterCompany
