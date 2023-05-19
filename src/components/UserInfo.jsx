@@ -4,11 +4,16 @@ import LoginButton from "./Login";
 import LogoutButton from "./Logout";
 import { Tooltip, Box, Menu, IconButton, Avatar, MenuItem, Typography, Divider } from '@mui/material';
 import { Link } from "react-router-dom";
+import { async } from "regenerator-runtime";
 
 const UserInfo = () => {
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+    
+    getAccessTokenSilently().then( (token) => {
+        console.log("Access token", token, 'End token');
+    } )
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
