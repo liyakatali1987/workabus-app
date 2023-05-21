@@ -8,6 +8,9 @@ import {
   Box,
   Paper
 } from "@mui/material";
+import axios from "axios";
+import { API_BASE_URL } from "../Constants";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import * as yup from "yup";
 import { FormProvider, useForm } from "react-hook-form";
@@ -75,9 +78,22 @@ export default function MultiStepForm() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = ["Company Details", "Contact", "Review"];
+  const { user } = useAuth0();
 
-  const onSubmit = (data) => {
-    console.log(JSON.stringify(data));
+  const onSubmit = async (data) => {
+    try {
+      const requestData = {
+        ...data,
+        email: user.email // Add the user's email to the request data
+      };
+      const response = await axios.post(`${API_BASE_URL}/company/createCompany`, requestData);
+      // const response = await axios.get(`${API_BASE_URL}/company/getCompany`, user.email);
+      console.log(response)
+      return response
+    } catch (error) {
+      console.error(error.message); // Handle any error that occurred
+    }
+    
   };
 
   const validationSchema = [
